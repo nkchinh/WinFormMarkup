@@ -27,6 +27,7 @@ Designer is verbose, and should only be maintained in a designer.  <code>#DoesNo
         /// </summary>
         private void InitializeComponent()
         {
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._newFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,21 +49,21 @@ Designer is verbose, and should only be maintained in a designer.  <code>#DoesNo
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this._newFileMenuItem, this._openFileMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileMenu");
             // 
             // _newFileMenuItem
             // 
             this._newFileMenuItem.Name = "_newFileMenuItem";
             this._newFileMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this._newFileMenuItem.Size = new System.Drawing.Size(152, 22);
-            this._newFileMenuItem.Text = "&New";
+            resources.ApplyResources(this._newFileMenuItem, "newMenuItem");
             // 
             // _openFileMenuItem
             // 
             this._openFileMenuItem.Name = "_openFileMenuItem";
             this._openFileMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this._openFileMenuItem.Size = new System.Drawing.Size(152, 22);
-            this._openFileMenuItem.Text = "&Open";
+            resources.ApplyResources(this._openFileMenuItem, "openMenuItem");
             // 
             // Test
             // 
@@ -72,7 +73,7 @@ Designer is verbose, and should only be maintained in a designer.  <code>#DoesNo
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Test";
-            this.Text = "Test";
+            resources.ApplyResources(this, "$this");
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -89,22 +90,26 @@ Designer is verbose, and should only be maintained in a designer.  <code>#DoesNo
         #endregion
 ```
 
-### With WinFormsMarkup
+### With WinFormMarkup
 
 Everything can be declared in a single simple flow.  
 
 ```csharp
         this.Text("Main Window")
             .Icon(Properties.Resources.AppIcon)
+            .Localize(out var resources)
             .MinimumSize(800,600)
             .StartPosition(FormStartPosition.CenterScreen)
             .MainMenuStrip(
                 new ToolStripMenuItem("&File")
+                    .Localize(resources, "fileMenu")
                     .DropDownItems(
                         new ToolStripMenuItem("&New")
+                            .Localize(resources, "newMenuItem")
                             .Keys(Keys.Control | Keys.N)
                             .Clicked(_ => CreateFile()),
                         new ToolStripMenuItem("&Open")
+                            .Localize(resources, "openMenuItem")
                             .Keys(Keys.Control | Keys.O)
                             .Clicked(_=> OpenFile())
                     ))

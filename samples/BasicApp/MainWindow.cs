@@ -12,28 +12,35 @@ public class MainWindow : Form
     public MainWindow()
     {
         this.Text("Main Window")
-            .Icon(new Icon( GetType(), "AppIcon.ico"))
+            .Localize(out var resources)
+            .Icon(new Icon(GetType(), "AppIcon.ico"))
             .MinimumSize(800, 600)
             .StartPosition(FormStartPosition.CenterScreen)
             .MainMenuStrip(
                 new ToolStripMenuItem("&File")
+                    .Localize(resources, "fileMenu")
                     .DropDownItems(
                         new ToolStripMenuItem("&New")
+                            .Localize(resources, "newMenuItem")
                             .Keys(Keys.Control | Keys.N)
                             .Clicked(_ => CreateFile()),
                         new ToolStripMenuItem("&Open")
+                            .Localize(resources, "openMenuItem")
                             .Keys(Keys.Control | Keys.O)
                             .Clicked(_ => OpenFile()),
                         new ToolStripMenuItem("&Save")
+                            .Localize(resources, "saveMenuItem")
                             .Keys(Keys.Control | Keys.S)
                             .Clicked(_ => SaveFile()),
                         new ToolStripSeparator(),
                         new ToolStripMenuItem("E&xit")
+                            .Localize(resources, "exitMenuItem")
                             .Keys(Keys.Alt | Keys.F4)
                             .Clicked(_ => Application.Exit())
                     ))
             .StatusStrip(
                 _statusText = new ToolStripStatusLabel("Ready")
+                    .Localize(resources, "statusText")
                     .Alignment(ToolStripItemAlignment.Right)
                     .Also(label =>
                     {
@@ -42,6 +49,7 @@ public class MainWindow : Form
                         label.Clicked(_ => label.Text = DateTime.Now.ToString(CultureInfo.CurrentCulture));
                     }),
                 _secondTextLabel = new ToolStripStatusLabel()
+                    .Localize(resources, "changeCountText")
             )
             .Controls(
                 new SplitContainer()
@@ -67,6 +75,7 @@ public class MainWindow : Form
                     )
                     .Panel2(
                         new TextBox()
+                            .Localize(resources, "editor")
                             .Multiline(true)
                             .Dock(DockStyle.Fill)
                             .Text("TextBox")

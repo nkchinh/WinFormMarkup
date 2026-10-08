@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>WinFormsMarkup</RootNamespace>
+        <RootNamespace>WinFormMarkup</RootNamespace>
         <OutputType>Library</OutputType>
         <PackageId>WinFormMarkup</PackageId>
         <Authors>bigtlb</Authors>
