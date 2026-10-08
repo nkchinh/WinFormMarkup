@@ -7,13 +7,19 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinFormMarkup</RootNamespace>
         <OutputType>Library</OutputType>
-        <PackageId>WinFormMarkup</PackageId>
-        <Authors>bigtlb</Authors>
+        <PackageId>NKChinh.WinFormMarkup</PackageId>
+        <Version>0.2.0</Version>
+        <Authors>nkchinh</Authors>
         <!-- <Company>HeliconSoftware</Company> -->
-        <PackageDescription>Fluent markup syntax for Windows Forms creation. Inspired by TornadoFX and Xamarin Community Toolkit C# Markup</PackageDescription>
-        <RepositoryUrl>https://github.com/bigtlb/WinFormMarkup</RepositoryUrl>
+        <PackageDescription>Fluent markup syntax for Windows Forms creation with localization support. Fork of https://www.nuget.org/packages/WinFormMarkup</PackageDescription>
+        <RepositoryUrl>https://github.com/nkchinh/WinFormMarkup</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
 
 </Project>

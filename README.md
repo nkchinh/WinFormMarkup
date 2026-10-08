@@ -1,7 +1,7 @@
-![main branch status](https://github.com/bigtlb/WinFormMarkup/actions/workflows/dotnet.yml/badge.svg) 
+![main branch status](https://github.com/nkchinh/WinFormMarkup/actions/workflows/dotnet.yml/badge.svg)
 ![Nuget Link](https://img.shields.io/nuget/v/WinFormMarkup?logo=nuget)  <!-- https://shields.io/category/version -->
 
-[The latest Nuget package is available here.](https://www.nuget.org/packages/WinFormMarkup/)
+[The latest Nuget package is available here.](https://www.nuget.org/packages/NKChinh.WinFormMarkup/)
 
 # WinFormMarkup
 
