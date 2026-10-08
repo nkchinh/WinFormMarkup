@@ -1,7 +1,17 @@
 ﻿namespace WinFormMarkup.Extensions;
 
+/// <summary>
+///     Fluent extensions for ToolStripItem.
+/// </summary>
 public static class ToolStripItemExtensions
 {
+    /// <summary>
+    ///     Sets the Alignment property and returns the same instance.
+    /// </summary>
+    /// <param name="item">The instance to configure.</param>
+    /// <param name="textAlign">The value to assign to Alignment.</param>
+    /// <typeparam name="TToolStripItem">The concrete type of the instance.</typeparam>
+    /// <returns>The same <paramref name="item" /> instance for fluent composition.</returns>
     public static TToolStripItem Alignment<TToolStripItem>(
         this TToolStripItem item,
         ToolStripItemAlignment textAlign)
@@ -11,6 +21,13 @@ public static class ToolStripItemExtensions
         return item;
     }
 
+    /// <summary>
+    ///     Invokes the configuration action immediately and returns the same instance.
+    /// </summary>
+    /// <param name="item">The instance to configure.</param>
+    /// <param name="action">The action invoked with the current instance.</param>
+    /// <typeparam name="TToolStripItem">The concrete type of the instance.</typeparam>
+    /// <returns>The same <paramref name="item" /> instance for fluent composition.</returns>
     public static TToolStripItem Also<TToolStripItem>(
         this TToolStripItem item,
         Action<TToolStripItem> action)
@@ -20,6 +37,13 @@ public static class ToolStripItemExtensions
         return item;
     }
 
+    /// <summary>
+    ///     Subscribes the action to the Click event and returns the same instance.
+    /// </summary>
+    /// <param name="item">The instance to configure.</param>
+    /// <param name="action">The action invoked with the event sender.</param>
+    /// <typeparam name="TToolStripItem">The concrete type of the instance.</typeparam>
+    /// <returns>The same <paramref name="item" /> instance for fluent composition.</returns>
     public static TToolStripItem Clicked<TToolStripItem>(
         this TToolStripItem item,
         Action<TToolStripItem> action)
@@ -30,6 +54,13 @@ public static class ToolStripItemExtensions
     }
 
 
+    /// <summary>
+    ///     Sets the Enabled property and returns the same instance.
+    /// </summary>
+    /// <param name="item">The instance to configure.</param>
+    /// <param name="enabled">The value to assign to Enabled.</param>
+    /// <typeparam name="TToolStripItem">The concrete type of the instance.</typeparam>
+    /// <returns>The same <paramref name="item" /> instance for fluent composition.</returns>
     public static TToolStripItem Enabled<TToolStripItem>(
         this TToolStripItem item,
         bool enabled)
@@ -39,6 +70,13 @@ public static class ToolStripItemExtensions
         return item;
     }
 
+    /// <summary>
+    ///     Sets the Text property and returns the same instance.
+    /// </summary>
+    /// <param name="item">The instance to configure.</param>
+    /// <param name="text">The value to assign to Text.</param>
+    /// <typeparam name="TToolStripItem">The concrete type of the instance.</typeparam>
+    /// <returns>The same <paramref name="item" /> instance for fluent composition.</returns>
     public static TToolStripItem Text<TToolStripItem>(
         this TToolStripItem item,
         string text)
@@ -48,6 +86,13 @@ public static class ToolStripItemExtensions
         return item;
     }
 
+    /// <summary>
+    ///     Sets the TextAlign property and returns the same instance.
+    /// </summary>
+    /// <param name="item">The instance to configure.</param>
+    /// <param name="textAlign">The value to assign to TextAlign.</param>
+    /// <typeparam name="TToolStripItem">The concrete type of the instance.</typeparam>
+    /// <returns>The same <paramref name="item" /> instance for fluent composition.</returns>
     public static TToolStripItem TextAlign<TToolStripItem>(
         this TToolStripItem item,
         ContentAlignment textAlign)

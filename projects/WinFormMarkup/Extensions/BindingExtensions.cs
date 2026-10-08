@@ -2,6 +2,9 @@
 
 namespace WinFormMarkup.Extensions;
 
+/// <summary>
+///     Fluent extensions for Binding.
+/// </summary>
 public static class BindingExtensions
 {
     /// <summary>
@@ -19,11 +22,11 @@ public static class BindingExtensions
     /// <param name="targetProp">A lambda expression accessing the direct target property (must be a member accessor).</param>
     /// <param name="convert">If present, hooks the `Binding.Format` event.</param>
     /// <param name="convertBack">If present, hooks the `Binding.Parse` event.</param>
-    /// <typeparam name="TSource"></typeparam>
-    /// <typeparam name="TSourceProp"></typeparam>
-    /// <typeparam name="TControl"></typeparam>
-    /// <typeparam name="TTargetProp"></typeparam>
-    /// <returns></returns>
+    /// <typeparam name="TSource">The data source type.</typeparam>
+    /// <typeparam name="TSourceProp">The source property type.</typeparam>
+    /// <typeparam name="TControl">The concrete control type.</typeparam>
+    /// <typeparam name="TTargetProp">The target property type.</typeparam>
+    /// <returns>The same <paramref name="control" /> instance for fluent composition.</returns>
     public static TControl Binding<TSource, TSourceProp, TControl, TTargetProp>(
         this TControl control,
         TSource source,
@@ -61,16 +64,16 @@ public static class BindingExtensions
     /// <remarks>
     ///     UpdateMode is OnPropertyChanged, formattingEnabled=false
     /// </remarks>
-    /// <param name="control"></param>
+    /// <param name="control">The instance to configure.</param>
     /// <param name="source">Source of the data binding</param>
     /// <param name="sourceProp">
     ///     A lambda expression accessing the source property (path derived through reflection and can be
     ///     several levels deep)
     /// </param>
-    /// <typeparam name="TSource"></typeparam>
-    /// <typeparam name="TSourceProp"></typeparam>
-    /// <typeparam name="TControl"></typeparam>
-    /// <returns></returns>
+    /// <typeparam name="TSource">The data source type.</typeparam>
+    /// <typeparam name="TSourceProp">The source property type.</typeparam>
+    /// <typeparam name="TControl">The concrete control type.</typeparam>
+    /// <returns>The same <paramref name="control" /> instance for fluent composition.</returns>
     public static TControl Binding<TSource, TSourceProp, TControl>(
         this TControl control,
         TSource source,
@@ -96,11 +99,11 @@ public static class BindingExtensions
     /// <param name="targetProp">Data binding path on target (default to "Text")</param>
     /// <param name="convert">If present, hooks the `Binding.Format` event.</param>
     /// <param name="convertBack">If present, hooks the `Binding.Parse` event.</param>
-    /// <typeparam name="TSource"></typeparam>
-    /// <typeparam name="TSourceProp"></typeparam>
-    /// <typeparam name="TControl"></typeparam>
-    /// <typeparam name="TTargetProp"></typeparam>
-    /// <returns></returns>
+    /// <typeparam name="TSource">The data source type.</typeparam>
+    /// <typeparam name="TSourceProp">The source property type.</typeparam>
+    /// <typeparam name="TControl">The concrete control type.</typeparam>
+    /// <typeparam name="TTargetProp">The target property type.</typeparam>
+    /// <returns>The same <paramref name="control" /> instance for fluent composition.</returns>
     public static TControl Binding<TSource, TSourceProp, TControl, TTargetProp>(
         this TControl control,
         TSource source,
