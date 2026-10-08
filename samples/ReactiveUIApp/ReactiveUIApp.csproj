@@ -1,16 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFrameworks>net8.0-windows;net471</TargetFrameworks>
         <Nullable>enable</Nullable>
-        <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>ReactiveUIApp</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ReactiveUI.WinForms" Version="18.0.7"/>
+        <PackageReference Include="ReactiveUI.WinForms" />
     </ItemGroup>
 
     <ItemGroup>

@@ -2,8 +2,7 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows</TargetFramework>
-        <UseWindowsForms>true</UseWindowsForms>
+        <TargetFrameworks>net8.0-windows;net471</TargetFrameworks>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <ApplicationIcon>AppIcon.ico</ApplicationIcon>
