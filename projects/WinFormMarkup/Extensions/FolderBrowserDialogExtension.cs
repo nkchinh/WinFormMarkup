@@ -38,7 +38,11 @@ public static class FolderBrowserDialogExtension
         this FolderBrowserDialog dialog,
         bool descriptionForTitle)
     {
+#if NET8_0_WINDOWS
         dialog.UseDescriptionForTitle = descriptionForTitle;
+#else
+        dialog.UseDescriptionForTitle(descriptionForTitle);
+#endif
         return dialog;
     }
 }

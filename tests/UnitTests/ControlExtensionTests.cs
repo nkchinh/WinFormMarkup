@@ -69,7 +69,7 @@ public class ControlExtensionTests
 
         void DoAssert(object? o, EventArgs eventArgs)
         {
-            Assert.Equal(yellow, form.Controls[^1]);
+            Assert.Equal(yellow, form.Controls[form.Controls.Count - 1]);
         }
 
         yellow.BeginInvoke((EventHandler)DoAssert);
@@ -90,7 +90,7 @@ public class ControlExtensionTests
 
         void DoAssert(object? o, EventArgs eventArgs)
         {
-            Assert.Equal(yellow, form.Controls[^1]);
+            Assert.Equal(yellow, form.Controls[form.Controls.Count - 1]);
         }
 
         yellow.BeginInvoke((EventHandler)DoAssert);
@@ -383,7 +383,7 @@ public class ControlExtensionTests
         var target = new Control();
         target.Binding(source,
             s => s.SourceNumber, t => t.Text,
-            n => $"This is {n}", s => int.Parse(s[^1].ToString()));
+            n => $"This is {n}", s => int.Parse(s[s.Length - 1].ToString()));
         target.Text = "Initial Value";
         source.SourceNumber = 5;
 

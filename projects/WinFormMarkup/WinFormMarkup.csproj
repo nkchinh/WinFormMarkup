@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFrameworks>net8.0-windows;net471</TargetFrameworks>
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>WinFormsMarkup</RootNamespace>
+        <RootNamespace>WinFormMarkup</RootNamespace>
         <OutputType>Library</OutputType>
         <PackageId>WinFormMarkup</PackageId>
         <Authors>bigtlb</Authors>

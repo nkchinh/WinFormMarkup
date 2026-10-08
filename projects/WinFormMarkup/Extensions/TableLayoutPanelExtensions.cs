@@ -26,10 +26,10 @@ public static class TableLayoutPanelExtensions
         if (columnStyles == null) throw new ArgumentNullException(nameof(columnStyles));
         foreach (var style in columnStyles.Split('|'))
             tableLayoutPanel.ColumnStyles.Add(
-                style[^1] == '*'
+                style[style.Length - 1] == '*'
                     ? new ColumnStyle { SizeType = SizeType.AutoSize, Width = 1 }
-                    : style[^1] == '%'
-                        ? new ColumnStyle { SizeType = SizeType.Percent, Width = float.Parse(style[..^1]) }
+                    : style[style.Length - 1] == '%'
+                        ? new ColumnStyle { SizeType = SizeType.Percent, Width = float.Parse(style.Substring(0, style.Length - 1)) }
                         : new ColumnStyle { SizeType = SizeType.Absolute, Width = float.Parse(style) });
 
         return tableLayoutPanel;
@@ -43,10 +43,10 @@ public static class TableLayoutPanelExtensions
         if (rowStyles == null) throw new ArgumentNullException(nameof(rowStyles));
         foreach (var style in rowStyles.Split('|'))
             tableLayoutPanel.RowStyles.Add(
-                style[^1] == '*'
+                style[style.Length - 1] == '*'
                     ? new RowStyle { SizeType = SizeType.AutoSize, Height = 1 }
-                    : style[^1] == '%'
-                        ? new RowStyle { SizeType = SizeType.Percent, Height = float.Parse(style[..^1]) }
+                    : style[style.Length - 1] == '%'
+                        ? new RowStyle { SizeType = SizeType.Percent, Height = float.Parse(style.Substring(0, style.Length - 1)) }
                         : new RowStyle { SizeType = SizeType.Absolute, Height = float.Parse(style) });
 
         return tableLayoutPanel;

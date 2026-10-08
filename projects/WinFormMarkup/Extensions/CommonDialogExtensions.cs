@@ -1,4 +1,4 @@
-﻿namespace WinFormMarkup.Extensions;
+namespace WinFormMarkup.Extensions;
 
 /// <summary>
 ///     Fluent extensions for CommonDialogs
@@ -29,4 +29,37 @@ public static class CommonDialogExtensions
     }
 }
 
+#if NET8_0_WINDOWS
 public record DialogInfo<TDialog>(TDialog Dialog, DialogResult Result);
+#else
+public sealed class DialogInfo<TDialog> : IEquatable<DialogInfo<TDialog>>
+{
+    public DialogInfo(TDialog dialog, DialogResult result)
+    {
+        Dialog = dialog;
+        Result = result;
+    }
+
+    public TDialog Dialog { get; }
+    public DialogResult Result { get; }
+
+    public void Deconstruct(out TDialog dialog, out DialogResult result)
+    {
+        dialog = Dialog;
+        result = Result;
+    }
+
+    public bool Equals(DialogInfo<TDialog>? other) =>
+        other is not null && EqualityComparer<TDialog>.Default.Equals(Dialog, other.Dialog) && Result == other.Result;
+
+    public override bool Equals(object? obj) => obj is DialogInfo<TDialog> other && Equals(other);
+
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            return ((Dialog is null ? 0 : EqualityComparer<TDialog>.Default.GetHashCode(Dialog)) * 397) ^ (int)Result;
+        }
+    }
+}
+#endif

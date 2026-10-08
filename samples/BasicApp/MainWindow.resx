@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="$this.Text" xml:space="preserve"><value>Main Window</value></data>
+  <data name="fileMenu.Text" xml:space="preserve"><value>&amp;File</value></data>
+  <data name="newMenuItem.Text" xml:space="preserve"><value>&amp;New</value></data>
+  <data name="openMenuItem.Text" xml:space="preserve"><value>&amp;Open</value></data>
+  <data name="saveMenuItem.Text" xml:space="preserve"><value>&amp;Save</value></data>
+  <data name="exitMenuItem.Text" xml:space="preserve"><value>E&amp;xit</value></data>
+  <data name="statusText.Text" xml:space="preserve"><value>Ready</value></data>
+  <data name="changeCountText.Text" xml:space="preserve"><value>Total Changes 0</value></data>
+  <data name="editor.Text" xml:space="preserve"><value>TextBox</value></data>
+</root>
