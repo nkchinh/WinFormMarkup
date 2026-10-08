@@ -11,6 +11,14 @@ Inspired by [TornadoFX][1] and [Xamarin Community Toolkit C# Markup][2].  WinFor
 
 Don't be dependent on an IDE designer.  Make cleaner forms.  Not every UI control needs a member variable.
 
+## Agent Skill
+
+Install the WinFormMarkup skill for AI coding agents with:
+
+```sh
+npx skills add https://github.com/nkchinh/WinFormMarkup --skill winform-markup
+```
+
 ## Problem
 In traditional WinForm designer initialization, every control is created and assigned a member variable, then styled and applied to the parent.  Although this makes it easier for tooling to parse the code, it is incredible redundant and harder to read through.  The generated block must be maintained by the designer otherwise you run the risk of breaking the parsing logic when a designer tries to load it.  This makes projects harder to work on in editors that don't support a designer (e.g., VS Code).
 
