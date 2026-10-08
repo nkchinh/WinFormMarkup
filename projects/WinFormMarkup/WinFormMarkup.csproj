@@ -8,7 +8,7 @@
         <RootNamespace>WinFormMarkup</RootNamespace>
         <OutputType>Library</OutputType>
         <PackageId>NKChinh.WinFormMarkup</PackageId>
-        <Version>0.2.0</Version>
+        <Version>0.2.1</Version>
         <Authors>nkchinh</Authors>
         <!-- <Company>HeliconSoftware</Company> -->
         <PackageDescription>Fluent markup syntax for Windows Forms creation with localization support. Fork of https://www.nuget.org/packages/WinFormMarkup</PackageDescription>
